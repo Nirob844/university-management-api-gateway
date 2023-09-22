@@ -5,6 +5,7 @@ import { academicSemesterRoutes } from '../modules/academicSemester/academicSeme
 import { authRoutes } from '../modules/auth/auth.routes';
 import { buildingRoutes } from '../modules/building/building.routes';
 import { courseRoutes } from '../modules/course/course.routes';
+import { managementDepartmentRoutes } from '../modules/managementDepartment/managementDepartment.routes';
 import { offeredCourseRoutes } from '../modules/offeredCourse/offeredCourse.routes';
 import { offeredCourseClassScheduleRoutes } from '../modules/offeredCourseClassSchedule/offeredCourseClassSchedule.routes';
 import { offeredCourseSectionRoutes } from '../modules/offeredCourseSection/offeredCourseSection.routes';
@@ -72,19 +73,11 @@ const moduleRoutes = [
   {
     path: '/student-enrolled-course-marks',
     routes: studentEnrolledCourseMarkRoutes
+  },
+  {
+    path: '/management-departments',
+    routes: managementDepartmentRoutes
   }
-  // {
-  //     path: '/student-semester-payments',
-  //     routes: studentSemesterPaymentRoutes
-  // },
-  // {
-  //     path: '/management-departments',
-  //     routes: managementDepartmentRoutes
-  // },
-  // {
-  //     path: '/admins',
-  //     routes: adminRoutes
-  // },
 ];
 
 moduleRoutes.forEach((route) => {
