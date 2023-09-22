@@ -75,7 +75,7 @@ const updateOneInDB = async (req: Request): Promise<IGenericResponse> => {
 
 const deleteByIdFromDB = async (req: Request): Promise<IGenericResponse> => {
   const { id } = req.params;
-  const response: IGenericResponse = await HttpService.delete(`/students/${id}`, {
+  const response: IGenericResponse = await AuthService.delete(`/students/${id}`, {
     headers: {
       Authorization: req.headers.authorization
     }
