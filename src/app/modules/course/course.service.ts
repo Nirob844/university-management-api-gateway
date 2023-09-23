@@ -51,10 +51,40 @@ const deleteByIdFromDB = async (req: Request): Promise<IGenericResponse> => {
   return response;
 };
 
-export const RoomService = {
+const assignFaculties = async (req: Request): Promise<IGenericResponse> => {
+  const { id } = req.params;
+  const response: IGenericResponse = await CoreService.post(
+    `/courses/${id}/assign-faculties`,
+    req.body,
+    {
+      headers: {
+        Authorization: req.headers.authorization
+      }
+    }
+  );
+  return response;
+};
+
+const removeFaculties = async (req: Request): Promise<IGenericResponse> => {
+  const { id } = req.params;
+  const response: IGenericResponse = await CoreService.delete(
+    `/courses/${id}/remove-faculties`,
+    req.body
+    // {
+    //   headers: {
+    //     Authorization: req.headers.authorization
+    //   }
+    // }
+  );
+  return response;
+};
+
+export const CourseService = {
   getAllFromDB,
   getByIdFromDB,
   updateOneInDB,
   deleteByIdFromDB,
-  insertIntoDB
+  insertIntoDB,
+  assignFaculties,
+  removeFaculties
 };

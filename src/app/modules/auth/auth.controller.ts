@@ -7,9 +7,7 @@ import { AuthenticationService } from './auth.service';
 const loginUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const result = await AuthenticationService.loginUser(req);
-
     const { refreshToken, ...others } = result.data;
-    console.log(refreshToken);
     const cookieOptions = {
       secure: config.env === 'production',
       httpOnly: true
