@@ -40,7 +40,7 @@ const updateCourseFinalMarks = async (req: Request, res: Response, next: NextFun
 
 export const StudentEnrolledCourseMarkController = {
   getAllFromDB,
+  getStudentMarks,
   updateMarks,
-  updateCourseFinalMarks,
-  getStudentMarks
+  updateCourseFinalMarks
 };
