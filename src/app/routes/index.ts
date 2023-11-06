@@ -11,11 +11,13 @@ import { managementDepartmentRoutes } from '../modules/managementDepartment/mana
 import { offeredCourseRoutes } from '../modules/offeredCourse/offeredCourse.routes';
 import { offeredCourseClassScheduleRoutes } from '../modules/offeredCourseClassSchedule/offeredCourseClassSchedule.routes';
 import { offeredCourseSectionRoutes } from '../modules/offeredCourseSection/offeredCourseSection.routes';
+import { paymentRoutes } from '../modules/payment/payment.routes';
 import { roomRoutes } from '../modules/room/room.routes';
 import { semesterRegistrationRoutes } from '../modules/semesterRegistration/semesterRegistration.routes';
 import { studentRoutes } from '../modules/student/student.routes';
 import { studentEnrolledCourseRoutes } from '../modules/studentEnrolledCourse/studentEnrolledCourse.routes';
 import { studentEnrolledCourseMarkRoutes } from '../modules/studentEnrolledCourseMark/studentEnrolledCourseMark.routes';
+import { studentSemesterPaymentRoutes } from '../modules/studentSemesterPayment/studentSemesterPayment.routes';
 import { userRoutes } from '../modules/user/user.routes';
 
 const router = express.Router();
@@ -92,6 +94,14 @@ const moduleRoutes = [
   {
     path: '/management-departments',
     routes: managementDepartmentRoutes
+  },
+  {
+    path: '/student-semester-payments',
+    routes: studentSemesterPaymentRoutes
+  },
+  {
+    path: '/payments',
+    routes: paymentRoutes
   }
 ];
 
